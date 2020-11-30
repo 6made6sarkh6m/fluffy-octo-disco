@@ -91,4 +91,25 @@ window.addEventListener('DOMContentLoaded',()=>{
 
         }
         setClock('.timer',deadline);
+
+    //Modal window
+
+    const modalShow = document.querySelectorAll('[data-modal]'),
+          modalWndw = document.querySelector('.modal'),
+          modalClose = document.querySelector('[data-close]')
+          
+
+          modalShow.forEach(btn=>{
+              btn.addEventListener('click', ()=>{
+                modalWndw.classList.add('show');
+                modalWndw.classList.remove('hide');
+                document.body.style.overflow = 'hidden';
+            })
+          })
+
+    modalClose.addEventListener('click',()=>{
+        modalWndw.classList.remove('show');
+        modalWndw.classList.add('hide');
+        document.body.style.overflow = 'scroll';
+    })
 });
